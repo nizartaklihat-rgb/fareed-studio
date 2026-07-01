@@ -1,0 +1,2439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="LMAJHOL STORE - Unapologetic streetwear designed in Casablanca. Premium 250 GSM heavyweight cotton tees.">
+  <title>LMAJHOL STORE | Unapologetic Streetwear</title>
+  <script>
+    // Force the page to ALWAYS start at the very top (hero / Shop button)
+    // on every load + refresh. Browsers otherwise remember the previous
+    // scroll position and can land the user stuck inside the video
+    // section with scroll locked.
+    (function () {
+      try { history.scrollRestoration = 'manual'; } catch (e) {}
+      function toTop() { window.scrollTo(0, 0); }
+      toTop();
+      document.addEventListener('DOMContentLoaded', toTop);
+      window.addEventListener('load', toTop);
+      // Some browsers restore scroll slightly after 'load' — guard with a
+      // short timeout too.
+      setTimeout(toTop, 0);
+      setTimeout(toTop, 100);
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #0b0d14;
+      --bg-soft: #f7f7f7;
+      --text: #ffffff;
+      --text-muted: rgba(255,255,255,0.65);
+      --accent: #ffffff;
+      --accent-light: rgba(255,255,255,0.85);
+      --border: rgba(255,255,255,0.2);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+      --shadow-hover: 0 20px 40px rgba(0,0,0,0.10);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --max-width: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background: var(--bg);
+      color: #111;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.scroll-locked {
+      overflow: hidden !important;
+      touch-action: none;
+      overscroll-behavior: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: transparent;
+      border-bottom: none;
+      transition: var(--transition);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 64px;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      background: #05070a;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+      z-index: 1;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 0 6px rgba(255,255,255,0.8), 0 0 12px rgba(255,255,255,0.4);
+      width: var(--size);
+      height: var(--size);
+      animation: twinkle var(--duration) ease-in-out infinite;
+      animation-delay: var(--delay);
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.7); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      color: #fff;
+      padding: 24vh 20px 0;
+      width: 100%;
+    }
+
+    .hero-content .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 42px;
+      background: transparent;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 50px;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 30px rgba(255,255,255,0.08);
+    }
+
+    .hero-content .btn:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.9);
+      box-shadow: 0 0 40px rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .hero-hint {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      z-index: 3;
+    }
+
+    /* Video section — normal flow, NOT sticky. Scrolls away when the user
+       scrolls so the video gets covered by the content below. */
+    .video-section {
+      position: relative;
+      height: 100vh;
+      height: 100dvh;
+      width: 100%;
+      background: #000;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    .video-section video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      z-index: 1;
+    }
+
+    .video-fallback {
+      position: absolute;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .scroll-indicator.visible {
+      opacity: 1;
+    }
+
+    .scroll-indicator-text {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .scroll-line {
+      width: 2px;
+      height: 60px;
+      background: rgba(255,255,255,0.25);
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    .scroll-dot {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      animation: scrollDot 1.8s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(255,255,255,0.6);
+    }
+
+    @keyframes scrollDot {
+      0% { top: 0; opacity: 1; }
+      80% { top: 54px; opacity: 0.3; }
+      100% { top: 54px; opacity: 0; }
+    }
+
+    /* Smooth modern fade-to-white overlay on the bottom part of the video.
+       Hidden while the video plays; toggled on (.visible) together with
+       the product card after the video ends, so the bottom of the video
+       dissolves into white behind the card. Sits above the video but
+       below the product card section. */
+    .video-fade-overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 35%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.25) 35%,
+        rgba(255, 255, 255, 0.7) 70%,
+        rgba(255, 255, 255, 0.98) 100%
+      );
+      opacity: 0;
+      pointer-events: none;
+      z-index: 2;
+      transition: opacity 0.7s ease-out;
+      will-change: opacity;
+    }
+
+    .video-fade-overlay.visible {
+      opacity: 1;
+    }
+
+    /* Product card section — a SIBLING of the video section, pulled up
+       25vh with negative margin so only the top 1/4 of this section
+       overlaps the bottom 1/4 of the video. The rest extends below.
+       The card never covers more than 1/4 of the video. Hidden until
+       the video ends, then fades in. Higher z-index so it renders on
+       top of the video section. */
+    .featured-info-section {
+      position: relative;
+      z-index: 7;
+      background: #ffffff;
+      padding: 36px 20px 80px;
+      margin-top: -25vh;
+      margin-top: -25dvh;
+      border-radius: 28px 28px 0 0;
+      box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.18);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    .featured-info-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .featured-product {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: var(--radius);
+      padding: 24px;
+      max-width: 420px;
+      margin: 0 auto;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+    }
+
+    /* Store signature shown when the hero video ends — replaces the
+       featured product card. Big typographic statement, no buttons,
+       acts as the brand signature for this drop. */
+    .store-signature {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    .store-signature-text {
+      font-size: clamp(2.2rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: #111;
+      margin: 0 0 18px;
+    }
+
+    .store-signature-sub {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #888;
+      margin: 0;
+    }
+
+    .featured-number {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .featured-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      color: #111;
+    }
+
+    .featured-meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .featured-options {
+      margin-bottom: 16px;
+    }
+
+    .featured-options .option-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    .featured-options .option-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .featured-options .option-btn {
+      min-width: 42px;
+      padding: 8px 14px;
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      color: #111;
+    }
+
+    .featured-options .option-btn:hover {
+      border-color: #111;
+    }
+
+    .featured-options .option-btn.active {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .featured-options .option-btn.color-white {
+      background: #fff;
+      color: #111;
+    }
+
+    .featured-options .option-btn.color-black {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .featured-options .option-btn.color-black.active {
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px #111;
+    }
+
+    .featured-options .option-btn.color-white.active {
+      box-shadow: 0 0 0 2px #111, 0 0 0 4px #fff;
+    }
+
+    .featured-price-order {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .featured-price {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #111;
+    }
+
+    .featured-price-order .btn {
+      padding: 12px 24px;
+      font-size: 0.8rem;
+    }
+
+    /* Marquee */
+    .marquee {
+      background: #111;
+      color: #fff;
+      padding: 14px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      z-index: 7;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee-text {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0 30px;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+      color: #111;
+    }
+
+    .section-subtitle {
+      color: #666;
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+
+    /* Size Guide */
+    .size-guide {
+      background: var(--bg-soft);
+      z-index: 7;
+      position: relative;
+    }
+
+    .size-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .size-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .size-visual img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .size-info h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: #888;
+    }
+
+    .size-info p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    .size-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
+
+    .size-table th,
+    .size-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .size-table th {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* Shop */
+    .shop {
+      background: #fff;
+      z-index: 7;
+      position: relative;
+    }
+
+    .shop-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .shop-count {
+      font-size: 0.95rem;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: #d0d0d0;
+    }
+
+    .product-image {
+      aspect-ratio: 1 / 1;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image img {
+      position: absolute;
+      inset: 20px;
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      pointer-events: none;
+    }
+
+    .product-image img.active {
+      opacity: 1;
+    }
+
+    .product-card:hover .product-image img.active {
+      transform: scale(1.05);
+    }
+
+    .color-switch {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 2;
+      background: rgba(255,255,255,0.85);
+      padding: 6px 10px;
+      border-radius: 50px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .color-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .color-dot.white {
+      background: #fff;
+      border-color: #ddd;
+    }
+
+    .color-dot.black {
+      background: #111;
+      border-color: #111;
+    }
+
+    .color-dot.active {
+      box-shadow: 0 0 0 2px #111;
+      transform: scale(1.15);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: #111;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-number {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .product-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      color: #111;
+    }
+
+    .product-meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 14px;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #111;
+    }
+
+    .product-btn {
+      padding: 8px 16px;
+      background: #111;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .product-btn:hover {
+      background: #333;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      background: #fff;
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+      transform: scale(0.96) translateY(10px);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .modal-overlay.active .modal {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #f7f7f7;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.4rem;
+      z-index: 10;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: #e5e5e5;
+    }
+
+    .modal-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .modal-image {
+      background: #f7f7f7;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+    }
+
+    .modal-image img {
+      max-height: 400px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .modal-details {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-number {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .modal-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      color: #111;
+    }
+
+    .modal-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .modal-desc {
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    .option-group {
+      margin-bottom: 24px;
+    }
+
+    .option-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .option-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .option-btn {
+      min-width: 48px;
+      padding: 10px 16px;
+      border: 1px solid #e5e5e5;
+      background: #fff;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      color: #111;
+    }
+
+    .option-btn:hover {
+      border-color: #111;
+    }
+
+    .option-btn.active {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .option-btn.color-white {
+      background: #fff;
+      color: #111;
+    }
+
+    .option-btn.color-black {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .option-btn.color-black.active {
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px #111;
+    }
+
+    .option-btn.color-white.active {
+      box-shadow: 0 0 0 2px #111, 0 0 0 4px #fff;
+    }
+
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .qty-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #e5e5e5;
+      background: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qty-btn:hover {
+      border-color: #111;
+      background: #f7f7f7;
+    }
+
+    .qty-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .order-form {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #e5e5e5;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-family: inherit;
+      background: #fff;
+      transition: var(--transition);
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: #111;
+      box-shadow: 0 0 0 3px rgba(17,17,17,0.06);
+    }
+
+    .form-textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .order-summary {
+      background: #f7f7f7;
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .summary-row.total {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #e5e5e5;
+      margin-bottom: 0;
+    }
+
+    .form-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 12px;
+    }
+
+    .status-message {
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: none;
+    }
+
+    .status-message.success {
+      display: block;
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .status-message.error {
+      display: block;
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    .status-message.loading {
+      display: block;
+      background: #f7f7f7;
+      color: #111;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 60px 0 30px;
+      z-index: 7;
+      position: relative;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .footer-text {
+      color: rgba(255,255,255,0.7);
+      max-width: 320px;
+      font-size: 0.95rem;
+    }
+
+    .footer-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.98);
+      z-index: 1500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: #f7f7f7;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: #fff;
+      color: #111;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .btn-dark {
+      background: #111;
+      color: #fff;
+    }
+
+    .btn-dark:hover {
+      background: #333;
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        padding-top: 28vh;
+      }
+
+      .hero-content .btn {
+        padding: 14px 36px;
+      }
+
+      /* Slightly tighter padding on mobile; keep the 1/4 overlap. */
+      .featured-info-section {
+        padding: 24px 16px 60px;
+        border-radius: 22px 22px 0 0;
+      }
+
+      .featured-product {
+        padding: 20px;
+        max-width: 100%;
+      }
+
+      .featured-name {
+        font-size: 1.2rem;
+      }
+
+      .featured-price-order {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .featured-price-order .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .size-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .size-visual {
+        order: -1;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .shop-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .modal-body {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-image {
+        min-height: 300px;
+        padding: 20px;
+      }
+
+      .modal-image img {
+        max-height: 280px;
+      }
+
+      .modal-details {
+        padding: 24px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .size-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* ===== Page loader — covers everything until the hero video is
+       ready to play through without buffering, so users on slow
+       connections don't see a laggy video when they click Shop. ===== */
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      background: #0b0d14;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    .page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .page-loader-inner {
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .page-loader-mark {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 6px;
+      color: #ffffff;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    .page-loader-bar {
+      width: 180px;
+      max-width: 60vw;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 2px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .page-loader-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: #ffffff;
+      transition: width 0.25s ease-out;
+    }
+
+    .page-loader-text {
+      margin-top: 16px;
+      font-size: 0.7rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page loader — covers everything until the hero video is ready to
+       play through without buffering. Hidden via JS when the video's
+       'canplaythrough' event fires (or after a fallback timeout). -->
+  <div class="page-loader" id="pageLoader">
+    <div class="page-loader-inner">
+      <div class="page-loader-mark">LMAJHOL</div>
+      <div class="page-loader-bar"><div class="page-loader-bar-fill" id="loaderBarFill"></div></div>
+      <div class="page-loader-text" id="loaderText">Loading</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container nav">
+      <a href="#" class="logo">LMAJHOL STORE</a>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">×</button>
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#shop" class="mobile-link">Shop</a>
+    <a href="#fit" class="mobile-link">Fit Guide</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="stars" id="starsContainer"></div>
+    <div class="hero-content">
+      <button class="btn" id="shopBtn">Shop</button>
+    </div>
+    <div class="hero-hint">Tap shop to enter</div>
+  </section>
+
+  <!-- Video Section (normal flow — NOT sticky. Scrolls away when the
+       user scrolls, so the video gets covered by the content below.) -->
+  <section class="video-section" id="videoSection">
+    <video id="heroVideo" playsinline preload="auto">
+      <!-- Source src is set by JS below based on device orientation:
+           portrait (phones, iPads/tablets in portrait) → 9:16 vertical video
+           landscape (PCs, iPads/tablets in landscape) → 16:9 horizontal video -->
+      <source id="heroVideoSource" src="" type="video/mp4">
+      <div class="video-fallback">Your browser does not support the video tag.</div>
+    </video>
+    <!-- Smooth modern fade-to-white overlay on the bottom part of the video.
+         Toggled on (with the card) after the video ends so the bottom of
+         the video dissolves into white behind the card. -->
+    <div class="video-fade-overlay" id="videoFadeOverlay"></div>
+    <div class="scroll-indicator" id="scrollIndicator">
+      <div class="scroll-line"><div class="scroll-dot"></div></div>
+      <div class="scroll-indicator-text">Scroll</div>
+    </div>
+  </section>
+
+  <!-- Featured Product Info — pulled up 25vh so only the top 1/4 of this
+       section overlaps the bottom 1/4 of the video. The rest extends below.
+       Hidden until the video ends. -->
+  <section class="featured-info-section" id="featuredInfoSection">
+    <div class="container">
+      <div class="store-signature">
+        <h2 class="store-signature-text">ANOTHER DROP.<br>STILL UNKNOWN</h2>
+        <p class="store-signature-sub">— LMAJHOL STORE</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-text">No Compromise /// Raw Aesthetic /// Pure Attitude ///</span>
+      <span class="marquee-text">No Compromise /// Raw Aesthetic /// Pure Attitude ///</span>
+      <span class="marquee-text">No Compromise /// Raw Aesthetic /// Pure Attitude ///</span>
+      <span class="marquee-text">No Compromise /// Raw Aesthetic /// Pure Attitude ///</span>
+      <span class="marquee-text">No Compromise /// Raw Aesthetic /// Pure Attitude ///</span>
+      <span class="marquee-text">No Compromise /// Raw Aesthetic /// Pure Attitude ///</span>
+      <span class="marquee-text">No Compromise /// Raw Aesthetic /// Pure Attitude ///</span>
+      <span class="marquee-text">No Compromise /// Raw Aesthetic /// Pure Attitude ///</span>
+    </div>
+  </div>
+
+  <!-- Shop / Archive -->
+  <section class="shop" id="shop">
+    <div class="container">
+      <div class="shop-header">
+        <div>
+          <h2 class="section-title">The Archive</h2>
+          <p class="section-subtitle">Premium heavyweight cotton, oversized fit, designed in Casablanca. Delivery: 20 MAD inside Casablanca, 35 MAD outside.</p>
+        </div>
+        <span class="shop-count" id="shopCount">1 product</span>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Size Guide -->
+  <section class="size-guide" id="fit">
+    <div class="container">
+      <div class="size-grid">
+        <div class="size-info">
+          <h3>Critical Info</h3>
+          <h2 class="section-title">The Fit Is Everything.</h2>
+          <p><strong>Model reference:</strong> The male model wearing the “STARS TEE” design from the back is wearing a size M in our premium 250 GSM heavyweight cotton for an oversized drop-shoulder fit.</p>
+          <p>Our garments are engineered for a relaxed, aggressive silhouette. We recommend going true to size for our intended oversized look, or sizing up for maximum drape.</p>
+          <table class="size-table">
+            <thead>
+              <tr>
+                <th>Size</th>
+                <th>Chest (cm)</th>
+                <th>Length (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>S</td><td>108</td><td>68</td></tr>
+              <tr><td>M</td><td>116</td><td>72</td></tr>
+              <tr><td>L</td><td>124</td><td>76</td></tr>
+              <tr><td>XL</td><td>132</td><td>80</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="size-visual">
+          <img src="https://github.com/nizartaklihat-rgb/video/releases/download/V1.0/IMG_3643.JPG" alt="STARS TEE - White" loading="lazy">
+          <img src="https://github.com/nizartaklihat-rgb/video/releases/download/V1.0/IMG_3644.PNG" alt="STARS TEE - Black" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img id="modalImage" src="" alt="">
+        </div>
+        <div class="modal-details">
+          <div class="modal-number" id="modalNumber">01</div>
+          <h2 class="modal-title" id="modalTitle">Product Name</h2>
+          <div class="modal-price" id="modalPrice">160 MAD</div>
+          <p class="modal-desc" id="modalDesc">Premium heavyweight cotton. Oversized fit. Designed in Casablanca.</p>
+
+          <div class="option-group">
+            <span class="option-label">Color</span>
+            <div class="option-buttons" id="colorOptions">
+              <button class="option-btn color-white active" data-color="White">White</button>
+              <button class="option-btn color-black" data-color="Black">Black</button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <span class="option-label">Size</span>
+            <div class="option-buttons" id="sizeOptions">
+              <button class="option-btn active" data-size="S">S</button>
+              <button class="option-btn" data-size="M">M</button>
+              <button class="option-btn" data-size="L">L</button>
+              <button class="option-btn" data-size="XL">XL</button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <span class="option-label">Quantity</span>
+            <div class="quantity-control">
+              <button class="qty-btn" id="qtyMinus">−</button>
+              <span class="qty-value" id="qtyValue">1</span>
+              <button class="qty-btn" id="qtyPlus">+</button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <span class="option-label">Delivery</span>
+            <div class="option-buttons" id="deliveryOptions">
+              <button class="option-btn active" data-delivery="inside" data-cost="20">Inside Casablanca (+20 MAD)</button>
+              <button class="option-btn" data-delivery="outside" data-cost="35">Outside Casablanca (+35 MAD)</button>
+            </div>
+          </div>
+
+          <div class="order-summary" id="orderSummary">
+            <div class="summary-row"><span>Item</span><span id="summaryItem">Product</span></div>
+            <div class="summary-row"><span>Color</span><span id="summaryColor">White</span></div>
+            <div class="summary-row"><span>Size</span><span id="summarySize">M</span></div>
+            <div class="summary-row"><span>Qty</span><span id="summaryQty">1</span></div>
+            <div class="summary-row"><span>Delivery</span><span id="summaryDelivery">Inside Casablanca</span></div>
+            <div class="summary-row total"><span>Total</span><span id="summaryTotal">180 MAD</span></div>
+          </div>
+
+          <form class="order-form" id="orderForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="customerName">Full Name *</label>
+                <input class="form-input" type="text" id="customerName" required placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="customerPhone">Phone *</label>
+                <input class="form-input" type="tel" id="customerPhone" required placeholder="06 XX XX XX XX">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="customerCity">City *</label>
+                <input class="form-input" type="text" id="customerCity" required placeholder="Casablanca, Rabat...">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="customerEmail">Email</label>
+                <input class="form-input" type="email" id="customerEmail" placeholder="Optional">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="customerAddress">Full Address *</label>
+              <textarea class="form-textarea" id="customerAddress" required placeholder="Street, neighborhood, building, floor..."></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="orderNotes">Order Notes</label>
+              <textarea class="form-textarea" id="orderNotes" placeholder="Any special request..."></textarea>
+            </div>
+            <div class="status-message" id="statusMessage"></div>
+            <button type="submit" class="btn btn-dark btn-block" id="submitOrder">Place Order</button>
+            <p class="form-note">Cash on delivery. You will receive a confirmation message before shipping.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">LMAJHOL STORE</div>
+          <p class="footer-text">Unapologetic streetwear designed in Casablanca. Premium heavyweight cotton, raw aesthetic, pure attitude.</p>
+        </div>
+        <div>
+          <div class="footer-title">Shop</div>
+          <ul class="footer-links">
+            <li><a href="#shop">All Products</a></li>
+            <li><a href="#fit">Size Guide</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Support</div>
+          <ul class="footer-links">
+            <li><a href="tel:+212600000000">+212 6XX XX XX XX</a></li>
+            <li><a href="/cdn-cgi/l/email-protection#395f584b5c5c5d4a4d4c5d5056795c41585449555c175a5654"><span class="__cf_email__" data-cfemail="16707764737372656263727f7956736e777b667a733875797b">[email&#160;protected]</span></a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 LMAJHOL STORE. All rights reserved.</span>
+        <span>Designed in Casablanca.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // ============================================
+    // FORCE START AT TOP (hero / Shop button)
+    // Backup for the head script — also covers BFcache (back/forward)
+    // restores where 'load' does not fire again.
+    // ============================================
+    try { history.scrollRestoration = 'manual'; } catch (e) {}
+    window.scrollTo(0, 0);
+    window.addEventListener('pageshow', function (ev) {
+      if (ev.persisted) { window.scrollTo(0, 0); }
+    });
+
+    // ============================================
+    // CONFIGURATION
+    // ============================================
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+
+    // ============================================
+    // PRODUCT DATA — Same images from your Wix site
+    // ============================================
+    const products = [
+      {
+        id: 1,
+        name: 'STARS TEE',
+        shortName: 'STARS TEE',
+        price: 160,
+        image: 'https://github.com/nizartaklihat-rgb/video/releases/download/V1.0/IMG_3643.JPG',
+        blackImage: 'https://github.com/nizartaklihat-rgb/video/releases/download/V1.0/IMG_3644.PNG',
+        desc: 'Premium heavyweight cotton. Oversized fit. Designed in Casablanca.'
+      }
+    ];
+
+    const justKissMe = products.find(p => p.id === 1);
+    const archiveProducts = products;
+
+    // ============================================
+    // STATE
+    // ============================================
+    let currentProduct = null;
+    let selectedColor = 'White';
+    let selectedSize = 'M';
+    let selectedDelivery = 'inside';
+    let deliveryCost = 20;
+    let quantity = 1;
+
+    let featuredColor = 'White';
+    let featuredSize = 'M';
+
+    // ============================================
+    // DOM ELEMENTS
+    // ============================================
+    const productsGrid = document.getElementById('productsGrid');
+    const modal = document.getElementById('productModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalNumber = document.getElementById('modalNumber');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalDesc = document.getElementById('modalDesc');
+    const colorOptions = document.getElementById('colorOptions');
+    const sizeOptions = document.getElementById('sizeOptions');
+    const deliveryOptions = document.getElementById('deliveryOptions');
+    const qtyMinus = document.getElementById('qtyMinus');
+    const qtyPlus = document.getElementById('qtyPlus');
+    const qtyValue = document.getElementById('qtyValue');
+    const orderForm = document.getElementById('orderForm');
+    const statusMessage = document.getElementById('statusMessage');
+    const shopBtn = document.getElementById('shopBtn');
+    const videoSection = document.getElementById('videoSection');
+    const heroVideo = document.getElementById('heroVideo');
+    const heroVideoSource = document.getElementById('heroVideoSource');
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    const videoFadeOverlay = document.getElementById('videoFadeOverlay');
+
+    // ============================================
+    // RESPONSIVE HERO VIDEO — pick 9:16 (portrait) or 16:9 (landscape)
+    // based on the device orientation at load time.
+    //   • Phones (portrait)                  → 9:16 vertical video
+    //   • iPads / tablets in portrait        → 9:16 vertical video
+    //   • PCs / Macs                          → 16:9 horizontal video
+    //   • iPads / tablets in landscape        → 16:9 horizontal video
+    // The CSS uses object-fit: cover, so whichever video is chosen,
+    // it fills the full-screen section without distortion.
+    // ============================================
+    const VIDEO_PORTRAIT_9_16  = "https://github.com/nizartaklihat-rgb/video/releases/download/V1.0/0701.mp4";
+    const VIDEO_LANDSCAPE_16_9 = "https://github.com/nizartaklihat-rgb/video/releases/download/V1.0/0701.mp4";
+
+    function pickHeroVideoByOrientation() {
+      // window.matchMedia('(orientation: portrait)') is the most reliable
+      // signal across phones, tablets, and desktops. We also fall back to
+      // comparing innerWidth / innerHeight in case matchMedia is unavailable.
+      let isPortrait;
+      try {
+        isPortrait = window.matchMedia('(orientation: portrait)').matches;
+      } catch (e) {
+        isPortrait = window.innerHeight > window.innerWidth;
+      }
+      const chosenURL = isPortrait ? VIDEO_PORTRAIT_9_16 : VIDEO_LANDSCAPE_16_9;
+      if (heroVideoSource && heroVideoSource.src !== chosenURL) {
+        heroVideoSource.src = chosenURL;
+        // .load() tells the browser to re-fetch / re-buffer the new source.
+        heroVideo.load();
+      }
+    }
+
+    // Pick the right video as early as possible so the page loader waits
+    // for the CORRECT video to be ready (not the wrong one).
+    pickHeroVideoByOrientation();
+
+    // If the user rotates the device (e.g. iPad from portrait to landscape)
+    // AFTER the page has loaded, swap to the appropriate video. We only do
+    // this BEFORE the user clicks Shop — once they've started watching, we
+    // don't interrupt playback.
+    let userStartedVideo = false;
+    window.addEventListener('resize', () => {
+      if (userStartedVideo) return;
+      pickHeroVideoByOrientation();
+    });
+    const featuredInfoSection = document.getElementById('featuredInfoSection');
+    const starsContainer = document.getElementById('starsContainer');
+    const featuredOrderBtn = document.getElementById('featuredOrderBtn');
+    const featuredColorOptions = document.getElementById('featuredColorOptions');
+    const featuredSizeOptions = document.getElementById('featuredSizeOptions');
+    const pageLoader = document.getElementById('pageLoader');
+    const loaderBarFill = document.getElementById('loaderBarFill');
+    const loaderText = document.getElementById('loaderText');
+
+    // ============================================
+    // STARS
+    // ============================================
+    function createStars() {
+      const count = 90;
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.setProperty('--duration', (2 + Math.random() * 3) + 's');
+        star.style.setProperty('--delay', (Math.random() * 5) + 's');
+        star.style.setProperty('--size', (1 + Math.random() * 2.5) + 'px');
+        starsContainer.appendChild(star);
+      }
+    }
+
+    // ============================================
+    // SCROLL LOCK UTILITIES
+    // ============================================
+    function preventScroll(e) {
+      e.preventDefault();
+    }
+
+    function preventKeyScroll(e) {
+      if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', ' ', 'Home', 'End'].includes(e.key)) {
+        e.preventDefault();
+      }
+    }
+
+    function lockScroll() {
+      document.body.classList.add('scroll-locked');
+      window.addEventListener('wheel', preventScroll, { passive: false });
+      window.addEventListener('touchmove', preventScroll, { passive: false });
+      window.addEventListener('keydown', preventKeyScroll, { passive: false });
+    }
+
+    function unlockScroll() {
+      document.body.classList.remove('scroll-locked');
+      window.removeEventListener('wheel', preventScroll);
+      window.removeEventListener('touchmove', preventScroll);
+      window.removeEventListener('keydown', preventKeyScroll);
+    }
+
+    // ============================================
+    // PAGE LOADER — ADAPTIVE BEHAVIOR (multi-signal slow detection)
+    //
+    // A connection can be slow for many reasons that navigator.connection
+    // does NOT report correctly:
+    //   • Congested public Wi-Fi (coffee shop, airport, hotel)
+    //   • Weak Wi-Fi signal (far from router, walls)
+    //   • Wi-Fi extender with bad backhaul
+    //   • Throttled corporate / school networks
+    //   • Slow VPN / corporate proxy
+    // On all of these, effectiveType reports '4g' even though throughput
+    // is terrible. So we use THREE signals together:
+    //
+    //   1. navigator.connection.effectiveType   → catches slow cellular
+    //   2. navigator.connection.downlink (Mbps) → catches slow Wi-Fi
+    //   3. navigator.connection.rtt (ms)        → catches high latency
+    //   4. REAL-TIME MEASUREMENT (most reliable) → after 3s of buffering,
+    //      if less than 20% of the video has downloaded, dynamically
+    //      switch to slow mode regardless of what the API said.
+    //
+    // GOOD connection → use 'canplaythrough' + 6s safety timeout.
+    // SLOW connection → show "Slow connection detected — XX%" and WAIT
+    //                   until the video is 100% fully downloaded.
+    // UNKNOWN (Safari, old browsers) → fall back to good-connection path,
+    //                   but still apply real-time measurement (signal #4).
+    // ============================================
+    const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const effectiveType = conn ? (conn.effectiveType || '4g') : '4g';
+    const downlinkMbps  = conn ? (conn.downlink || 0) : 0;  // estimated Mbps
+    const rttMs         = conn ? (conn.rtt || 0) : 0;        // estimated round-trip ms
+
+    // Initial slow-connection guess based on the three static signals.
+    let isSlowConnection = (
+      ['slow-2g', '2g', '3g'].includes(effectiveType) ||  // slow cellular
+      (downlinkMbps > 0 && downlinkMbps < 1.5) ||          // < 1.5 Mbps = slow Wi-Fi
+      (rttMs > 500)                                         // high latency
+    );
+
+    let loaderHidden = false;
+    let switchedToSlowMode = false;
+
+    function hideLoader() {
+      if (loaderHidden) return;
+      loaderHidden = true;
+      if (pageLoader) pageLoader.classList.add('hidden');
+    }
+
+    function setLoaderText(text) {
+      if (loaderText) loaderText.textContent = text;
+    }
+
+    // Update the progress bar + (on slow connections) the percentage text
+    // as the video buffers. On slow connections we also use this event to
+    // detect 100% buffered → safe to play.
+    heroVideo.addEventListener('progress', () => {
+      if (!heroVideo.buffered || heroVideo.buffered.length === 0) return;
+      try {
+        const buffered = heroVideo.buffered.end(heroVideo.buffered.length - 1);
+        const duration = heroVideo.duration || 0;
+        if (duration <= 0) return;
+        const pct = Math.min(100, Math.max(0, (buffered / duration) * 100));
+        if (loaderBarFill) loaderBarFill.style.width = pct.toFixed(0) + '%';
+
+        if (isSlowConnection) {
+          // Live-update the percentage so the user sees clear progress.
+          setLoaderText('Slow connection detected — ' + pct.toFixed(0) + '%');
+          // 100% fully downloaded → safe to play without any lag.
+          // Use a small 0.5s tolerance because some browsers never report
+          // the EXACT end frame.
+          if (buffered >= duration - 0.5) {
+            hideLoader();
+          }
+        }
+      } catch (e) { /* buffered not ready yet — ignore */ }
+    });
+
+    // If the video's metadata loaded we at least know the duration —
+    // update the bar so it doesn't sit at 0% on connections where the
+    // first 'progress' event is delayed.
+    heroVideo.addEventListener('loadedmetadata', () => {
+      if (loaderBarFill && heroVideo.duration) {
+        loaderBarFill.style.width = '4%';
+      }
+    });
+
+    // If the video errors out (404, codec, network), don't trap the user
+    // regardless of connection speed.
+    heroVideo.addEventListener('error', hideLoader);
+
+    if (isSlowConnection) {
+      // SLOW CONNECTION PATH (initial detection) — wait for full download.
+      setLoaderText('Slow connection detected — loading…');
+      // Do NOT listen for canplaythrough — on slow connections that event
+      // can fire with only a small chunk buffered, and the video will lag
+      // mid-playback. We rely on the progress listener above to detect
+      // 100% buffered. 60s safety net in case the connection stalls
+      // completely — better than trapping the user forever.
+      setTimeout(hideLoader, 60000);
+    } else {
+      // GOOD / UNKNOWN CONNECTION PATH — original behavior, but with a
+      // real-time safety net that can switch to slow mode if actual
+      // throughput turns out to be bad (congested Wi-Fi etc.).
+      heroVideo.addEventListener('canplaythrough', hideLoader);
+      heroVideo.addEventListener('canplay', hideLoader);
+      // 6s fallback: if the video isn't ready yet, show the page anyway —
+      // the real-time check below will already have triggered slow mode
+      // by then if the connection was actually bad.
+      setTimeout(hideLoader, 6000);
+    }
+
+    // ============================================
+    // REAL-TIME SPEED MEASUREMENT — the most reliable slow-detection
+    // signal. 3 seconds after load, sample how much of the video has
+    // actually buffered. If less than 20% has downloaded in 3s, the
+    // connection is too slow to trust canplaythrough — switch to slow
+    // mode dynamically and wait for full download instead.
+    //
+    // This catches congested / weak Wi-Fi that navigator.connection
+    // misreports as '4g'.
+    // ============================================
+    setTimeout(() => {
+      if (loaderHidden || switchedToSlowMode) return;
+      // Already in slow mode from initial detection — nothing to do.
+      if (isSlowConnection) return;
+
+      let bufferedPct = 0;
+      try {
+        if (heroVideo.buffered && heroVideo.buffered.length > 0) {
+          const buffered = heroVideo.buffered.end(heroVideo.buffered.length - 1);
+          const duration = heroVideo.duration || 0;
+          if (duration > 0) {
+            bufferedPct = (buffered / duration) * 100;
+          }
+        }
+      } catch (e) { /* ignore */ }
+
+      // Threshold: if less than 20% of the video buffered after 3 seconds,
+      // the connection is too slow. canplaythrough may have already fired
+      // (or be about to fire) with only a small chunk buffered — we don't
+      // want that, because the video will lag mid-playback.
+      //
+      // Also catches the case where NOTHING has buffered at all after 3s
+      // (bufferedPct === 0) — definitely slow.
+      if (bufferedPct < 20) {
+        switchedToSlowMode = true;
+        isSlowConnection = true;
+        // Stop listening to canplaythrough/canplay — we now want to wait
+        // for 100% buffered instead. (hideLoader listeners are removed.)
+        heroVideo.removeEventListener('canplaythrough', hideLoader);
+        heroVideo.removeEventListener('canplay', hideLoader);
+        // Update the text — the progress listener will keep updating
+        // the percentage as more buffers arrive.
+        setLoaderText('Slow connection detected — ' + Math.round(bufferedPct) + '%');
+        // Push the safety timeout out to 60s so we actually have time to
+        // wait for the full download.
+        setTimeout(hideLoader, 60000);
+      }
+    }, 3000);
+
+    // ============================================
+    // HERO VIDEO FLOW
+    // ============================================
+    lockScroll();
+
+    shopBtn.addEventListener('click', () => {
+      unlockScroll();
+      // Lock in the current video — if the user rotates the device while
+      // watching, we don't want to swap sources mid-playback.
+      userStartedVideo = true;
+
+      // --- Reset the whole video state so EVERY click replays the exact
+      // --- same flow as the first one. Without this, the second click
+      // --- would leave the video frozen on its last frame, the product
+      // --- card + fade visible, and the scroll locked forever (because
+      // --- the 'ended' event never fires again).
+      try { heroVideo.currentTime = 0; } catch (e) { /* ignore */ }
+      featuredInfoSection.classList.remove('visible');
+      scrollIndicator.classList.remove('visible');
+      if (videoFadeOverlay) videoFadeOverlay.classList.remove('visible');
+
+      // IMPORTANT: Start the video FIRST, then trigger the scroll in the
+      // same JS turn. This way the video is already decoding/playing by
+      // the time the smooth scroll animation begins — the user sees
+      // motion immediately, with no perceivable delay between "I clicked
+      // Shop" and "the video is playing". The scroll and the video play
+      // happen in the same browser animation frame, perceived as
+      // simultaneous.
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(err => console.error('Video play failed:', err));
+      }
+
+      // Kick off the smooth scroll immediately after — same frame.
+      videoSection.scrollIntoView({ behavior: 'smooth' });
+
+      // Lock scroll again after the auto-scroll finishes so the user
+      // cannot scroll during playback.
+      setTimeout(() => {
+        lockScroll();
+      }, 900);
+    });
+
+    heroVideo.addEventListener('ended', () => {
+      // Lock the video on its last frame so it doubles as the product image.
+      try {
+        heroVideo.pause();
+        if (heroVideo.duration && isFinite(heroVideo.duration)) {
+          heroVideo.currentTime = heroVideo.duration;
+        }
+      } catch (e) { /* ignore */ }
+
+      // Show the "Scroll" hint first, then reveal the fade-to-white
+      // overlay + product card ~600ms later so the bottom of the (frozen)
+      // video dissolves into white and the card fades in over the bottom
+      // 1/4. The hint is hidden by the card as it appears.
+      scrollIndicator.classList.add('visible');
+      setTimeout(() => {
+        if (videoFadeOverlay) videoFadeOverlay.classList.add('visible');
+        featuredInfoSection.classList.add('visible');
+        scrollIndicator.classList.remove('visible');
+      }, 600);
+
+      unlockScroll();
+    });
+
+    // ============================================
+    // FEATURED PRODUCT (STARS TEE)
+    // NOTE: The featured product card has been replaced by the store
+    // signature text ("ANOTHER DROP. STILL UNKNOWN"). The signature
+    // still toggles in via featuredInfoSection.classList.add('visible')
+    // when the hero video ends — no button handlers needed.
+    // ============================================
+
+    // ============================================
+    // RENDER PRODUCTS
+    // ============================================
+    function renderProducts() {
+      productsGrid.innerHTML = archiveProducts.map((product, index) => {
+        const randomColor = Math.random() > 0.5 ? 'white' : 'black';
+        return `
+        <article class="product-card" data-id="${product.id}" role="button" tabindex="0" aria-label="Open ${product.name}">
+          <div class="product-image">
+            <img class="product-img-white ${randomColor === 'white' ? 'active' : ''}" src="${product.image}" alt="${product.name} - White" loading="lazy">
+            <img class="product-img-black ${randomColor === 'black' ? 'active' : ''}" src="${product.blackImage}" alt="${product.name} - Black" loading="lazy">
+            <div class="color-switch" data-id="${product.id}">
+              <span class="color-dot white ${randomColor === 'white' ? 'active' : ''}" data-color="white" title="White"></span>
+              <span class="color-dot black ${randomColor === 'black' ? 'active' : ''}" data-color="black" title="Black"></span>
+            </div>
+          </div>
+          <span class="product-tag">New</span>
+          <div class="product-info">
+            <div class="product-number">${String(index + 1).padStart(2, '0')}</div>
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-meta">250 GSM · Oversized · Casablanca</p>
+            <div class="product-footer">
+              <span class="product-price">${product.price} MAD</span>
+              <button class="product-btn">Order Now</button>
+            </div>
+          </div>
+        </article>
+      `;
+      }).join('');
+
+      document.querySelectorAll('.product-card').forEach(card => {
+        const id = Number(card.dataset.id);
+        const product = archiveProducts.find(p => p.id === id);
+        const whiteImg = card.querySelector('.product-img-white');
+        const blackImg = card.querySelector('.product-img-black');
+        const whiteDot = card.querySelector('.color-dot.white');
+        const blackDot = card.querySelector('.color-dot.black');
+
+        function switchCardImage(color) {
+          if (color === 'white') {
+            whiteImg.classList.add('active');
+            blackImg.classList.remove('active');
+            whiteDot.classList.add('active');
+            blackDot.classList.remove('active');
+          } else {
+            blackImg.classList.add('active');
+            whiteImg.classList.remove('active');
+            blackDot.classList.add('active');
+            whiteDot.classList.remove('active');
+          }
+        }
+
+        let autoSwitch = setInterval(() => {
+          const currentColor = whiteImg.classList.contains('active') ? 'white' : 'black';
+          switchCardImage(currentColor === 'white' ? 'black' : 'white');
+        }, 3500);
+
+        card.addEventListener('mouseenter', () => {
+          clearInterval(autoSwitch);
+          const currentColor = whiteImg.classList.contains('active') ? 'white' : 'black';
+          switchCardImage(currentColor === 'white' ? 'black' : 'white');
+        });
+
+        card.addEventListener('mouseleave', () => {
+          const currentColor = whiteImg.classList.contains('active') ? 'white' : 'black';
+          switchCardImage(currentColor === 'white' ? 'black' : 'white');
+          autoSwitch = setInterval(() => {
+            const c = whiteImg.classList.contains('active') ? 'white' : 'black';
+            switchCardImage(c === 'white' ? 'black' : 'white');
+          }, 3500);
+        });
+
+        card.querySelectorAll('.color-dot').forEach(dot => {
+          dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            switchCardImage(dot.dataset.color);
+          });
+        });
+
+        card.addEventListener('click', () => {
+          const activeColor = whiteImg.classList.contains('active') ? 'White' : 'Black';
+          openModal(product, activeColor);
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const activeColor = whiteImg.classList.contains('active') ? 'White' : 'Black';
+            openModal(product, activeColor);
+          }
+        });
+      });
+    }
+
+    // ============================================
+    // MODAL LOGIC
+    // ============================================
+    function openModal(product, color, size) {
+      currentProduct = product;
+      selectedColor = color || 'White';
+      selectedSize = size || 'M';
+      selectedDelivery = 'inside';
+      deliveryCost = 20;
+      quantity = 1;
+
+      modalImage.src = selectedColor === 'White' ? product.image : product.blackImage;
+      modalImage.alt = product.name;
+      modalNumber.textContent = String(product.id).padStart(2, '0');
+      modalTitle.textContent = product.name;
+      modalPrice.textContent = `${product.price} MAD`;
+      modalDesc.textContent = product.desc;
+
+      colorOptions.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+      colorOptions.querySelector(`[data-color="${selectedColor}"]`).classList.add('active');
+      sizeOptions.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+      sizeOptions.querySelector(`[data-size="${selectedSize}"]`).classList.add('active');
+      deliveryOptions.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+      deliveryOptions.querySelector('[data-delivery="inside"]').classList.add('active');
+      qtyValue.textContent = '1';
+      orderForm.reset();
+      statusMessage.className = 'status-message';
+      statusMessage.textContent = '';
+
+      updateSummary();
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      modalTitle.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+
+    colorOptions.addEventListener('click', (e) => {
+      if (e.target.classList.contains('option-btn')) {
+        colorOptions.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        selectedColor = e.target.dataset.color;
+        if (currentProduct) {
+          modalImage.src = selectedColor === 'White' ? currentProduct.image : currentProduct.blackImage;
+        }
+        updateSummary();
+      }
+    });
+
+    sizeOptions.addEventListener('click', (e) => {
+      if (e.target.classList.contains('option-btn')) {
+        sizeOptions.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        selectedSize = e.target.dataset.size;
+        updateSummary();
+      }
+    });
+
+    deliveryOptions.addEventListener('click', (e) => {
+      if (e.target.classList.contains('option-btn')) {
+        deliveryOptions.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        selectedDelivery = e.target.dataset.delivery;
+        deliveryCost = Number(e.target.dataset.cost);
+        updateSummary();
+      }
+    });
+
+    qtyMinus.addEventListener('click', () => {
+      if (quantity > 1) {
+        quantity--;
+        qtyValue.textContent = quantity;
+        updateSummary();
+      }
+    });
+
+    qtyPlus.addEventListener('click', () => {
+      if (quantity < 10) {
+        quantity++;
+        qtyValue.textContent = quantity;
+        updateSummary();
+      }
+    });
+
+    function updateSummary() {
+      const subtotal = currentProduct ? currentProduct.price * quantity : 0;
+      const total = subtotal + deliveryCost;
+      document.getElementById('summaryItem').textContent = currentProduct ? currentProduct.shortName : 'Product';
+      document.getElementById('summaryColor').textContent = selectedColor;
+      document.getElementById('summarySize').textContent = selectedSize;
+      document.getElementById('summaryQty').textContent = quantity;
+      document.getElementById('summaryDelivery').textContent = selectedDelivery === 'inside' ? 'Inside Casablanca (+20 MAD)' : 'Outside Casablanca (+35 MAD)';
+      document.getElementById('summaryTotal').textContent = `${total} MAD`;
+    }
+
+    // ============================================
+    // ORDER SUBMISSION
+    // ============================================
+    orderForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('customerName').value.trim();
+      const phone = document.getElementById('customerPhone').value.trim();
+      const city = document.getElementById('customerCity').value.trim();
+      const email = document.getElementById('customerEmail').value.trim();
+      const address = document.getElementById('customerAddress').value.trim();
+      const notes = document.getElementById('orderNotes').value.trim();
+      const submitBtn = document.getElementById('submitOrder');
+
+      if (!name || !phone || !city || !address) {
+        showStatus('Please fill in all required fields.', 'error');
+        return;
+      }
+
+      if (APPS_SCRIPT_URL.includes('YOUR_SCRIPT_ID')) {
+        showStatus('Notification system not configured yet. Please follow the README setup.', 'error');
+        return;
+      }
+
+      const orderData = {
+        product: currentProduct.name,
+        color: selectedColor,
+        size: selectedSize,
+        quantity: quantity,
+        price: currentProduct.price,
+        delivery: selectedDelivery === 'inside' ? 'Inside Casablanca' : 'Outside Casablanca',
+        deliveryCost: deliveryCost,
+        total: currentProduct.price * quantity + deliveryCost,
+        name: name,
+        phone: phone,
+        city: city,
+        email: email || 'Not provided',
+        address: address,
+        notes: notes || 'None',
+        date: new Date().toLocaleString()
+      };
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      showStatus('Submitting your order...', 'loading');
+
+      try {
+        const response = await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(orderData)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          showStatus('Order placed successfully! We will contact you shortly to confirm.', 'success');
+          orderForm.reset();
+          quantity = 1;
+          qtyValue.textContent = '1';
+          updateSummary();
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (error) {
+        showStatus('Something went wrong. Please try again or contact us directly.', 'error');
+        console.error('Order error:', error);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Place Order';
+      }
+    });
+
+    function showStatus(message, type) {
+      statusMessage.textContent = message;
+      statusMessage.className = 'status-message ' + type;
+    }
+
+    // ============================================
+    // MOBILE MENU
+    // ============================================
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+    // ============================================
+    // HEADER SCROLL EFFECT
+    // ============================================
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      // The video section is the dark region. Once the user has scrolled
+      // past most of it (the white featured-info section / marquee are
+      // coming into view), switch the header to its solid white state.
+      // Before that, keep it transparent with a white logo over the video.
+      const solidThreshold = videoSection.offsetTop + videoSection.offsetHeight * 0.6;
+      if (window.scrollY > solidThreshold) {
+        header.style.background = 'rgba(255,255,255,0.92)';
+        header.style.backdropFilter = 'blur(12px)';
+        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+        header.querySelector('.logo').style.color = '#111';
+      } else {
+        header.style.background = 'transparent';
+        header.style.backdropFilter = 'none';
+        header.style.boxShadow = 'none';
+        header.querySelector('.logo').style.color = '#fff';
+      }
+    }, { passive: true });
+
+    // ============================================
+    // INIT
+    // ============================================
+    createStars();
+    renderProducts();
+    updateSummary();
+  </script>
+</body>
+</html>
